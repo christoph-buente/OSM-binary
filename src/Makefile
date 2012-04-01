@@ -23,6 +23,15 @@ install:
 	install -m 644 -g root -o root ../include/osmpbf/fileformat.pb.h $(DESTDIR)/usr/include/osmpbf
 	install -m 644 -g root -o root ../include/osmpbf/osmformat.pb.h $(DESTDIR)/usr/include/osmpbf
 
+install_homebrew:
+	install -m 755 -d /usr/local/lib
+	install -m 644 libosmpbf.a /usr/local/lib
+	install -m 755 -d /usr/local/include/osmpbf
+	install -m 644 ../include/osmpbf/osmpbf.h /usr/local/include/osmpbf
+	install -m 644 ../include/osmpbf/fileformat.pb.h /usr/local/include/osmpbf
+	install -m 644 ../include/osmpbf/osmformat.pb.h /usr/local/include/osmpbf
+
+
 clean:
 	rm -f *.pb.h *.pb.cc *.pb.o libosmpbf.a
 
